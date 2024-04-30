@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/my screens/inventory.rpy", line 15: 'init' is not a keyword argument or valid child of the for statement.
-    init python:
-        ^
+File "game/my screens/inventory.rpy", line 37: 'x' is not a keyword argument or valid child of the text statement.
+    text "тут пусто"  x                   
+                       ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Tue Apr 30 22:17:32 2024
+Tue Apr 30 23:10:09 2024

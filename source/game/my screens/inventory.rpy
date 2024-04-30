@@ -16,15 +16,18 @@ screen inventory(back_button=True):
                     if i <= len(Item_list)-1:
                         item_obj = Item_list[i]
                         item_status = item_obj.get_status()
+
                     else:
                         item_status = False
 
                 if item_status == True:
                     button:
-                        action Confirm([item_obj.get_description()], Return())
+                        action Show('message_screen', message=[item_obj.get_description()])
                         add [item_obj.get_image_path()] xalign 0.0
                 else:
                     button:
-                        action Confirm("Тут пусто", Return())
-                        
+                        action Show('message_screen', message='Тут пусто')
+
+
+
 
