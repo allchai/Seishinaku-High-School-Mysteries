@@ -387,7 +387,7 @@ style main_menu_frame:
     xsize 210
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    # background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -429,7 +429,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
         hbox:
 
-            ## Резервирует пространство для навигации.
+            ## Reserve space for the navigation section.
             frame:
                 style "game_menu_navigation_frame"
 
@@ -475,7 +475,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
     use navigation
 
-    textbutton _("Вернуться"):
+    textbutton _("Return"):
         style "return_button"
 
         action Return()
@@ -484,6 +484,10 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
+
+
+
+
 
 
 style game_menu_outer_frame is empty
@@ -510,12 +514,12 @@ style game_menu_navigation_frame:
     yfill True
 
 style game_menu_content_frame:
-    left_margin 30
+    #left_margin 20
     right_margin 15
     top_margin 8
 
 style game_menu_viewport:
-    xsize 690
+    xsize 720
 
 style game_menu_vscrollbar:
     unscrollable gui.unscrollable
@@ -524,18 +528,19 @@ style game_menu_side:
     spacing 8
 
 style game_menu_label:
-    xpos 38
+    xalign 0.5
+    #xpos 38
     ysize 90
 
 style game_menu_label_text:
     size gui.title_text_size
     color gui.accent_color
+    xalign 0.2
     yalign 0.5
 
 style return_button:
-    xpos gui.navigation_xpos
-    yalign 1.0
-    yoffset -22
+    xalign 0.03
+    yalign 0.627
 
 
 ## Экран Об игре ###############################################################

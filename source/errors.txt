@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 20: expected menuitem
-    zorder 100 
-    ^
+File "game/my screens/inventory.rpy", line 15: 'init' is not a keyword argument or valid child of the for statement.
+    init python:
+        ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Thu Apr 25 22:34:39 2024
+Tue Apr 30 22:17:32 2024
