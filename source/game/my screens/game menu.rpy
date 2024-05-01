@@ -8,8 +8,6 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0, back_button=True):
     else:
         add gui.game_menu_background
 
-    
-
     frame:
         style "game_menu_outer_frame"
 
@@ -60,21 +58,10 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0, back_button=True):
                     transclude
 
     use navigation
-
-    
-
-    label title
-
-    if main_menu:
-        key "game_menu" action ShowMenu("main_menu")
-    
+    label title    
     if back_button:
         imagebutton auto "gui/button/back_%s.png":
-            xalign 1.0
-            style "return_button"
+            xalign gui.return_button_xalign
+            yalign gui.return_button_yalign
             action ShowMenu("main_menu")
 
-screen Test():
-    zorder 100
-
-    

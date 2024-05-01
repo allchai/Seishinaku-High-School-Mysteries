@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/my screens/inventory.rpy", line 37: 'x' is not a keyword argument or valid child of the text statement.
-    text "тут пусто"  x                   
-                       ^
+File "game/options.rpy", line 33: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a " at the end of the first line.)
+    """)
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Tue Apr 30 23:10:09 2024
+Thu May  2 00:40:02 2024

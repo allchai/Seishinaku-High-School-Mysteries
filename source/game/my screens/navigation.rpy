@@ -27,9 +27,10 @@ screen navigation():
 
         vbox:
             xalign 0.5
-            yalign 0.84
+            yalign 0.865
             spacing 5 
 
+            imagebutton auto "gui/button/back_game_%s.png" action Return()
             imagebutton auto "gui/button/mainMenu_%s.png" action MainMenu()
 
 
@@ -39,9 +40,7 @@ screen navigation():
 
     elif not main_menu:
         
-        imagebutton auto "gui/button/back_%s.png":
-            style "return_button"
-            action Return()
+        
 
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):

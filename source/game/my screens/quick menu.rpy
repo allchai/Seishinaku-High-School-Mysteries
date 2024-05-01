@@ -21,8 +21,8 @@ screen quick_menu():
             imagebutton auto "gui/button/Qsettings_%s.png" action ShowMenu('preferences', back_button=False)
         
         imagebutton auto "gui/button/inventory_%s.png" action ShowMenu('inventory', back_button=False):
-            xalign 0.9765
-            yalign 0.883
+            xalign 0.9766
+            yalign 0.856
 
 
 

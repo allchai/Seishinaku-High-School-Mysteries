@@ -44,4 +44,10 @@ style inventory_button:
     xsize 100
     ysize 100
 
+style return_button:
+    xalign 1.1
+    yalign 0.5
+
 define gui.inventory_spacing = 17
+define gui.return_button_xalign = 0.11
+define gui.return_button_yalign = 0.639

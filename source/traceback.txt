@@ -1,70 +1,24 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00gamemenu.rpy", line 174, in script
-    $ ui.interact()
-  File "renpy/common/00gamemenu.rpy", line 174, in <module>
-    $ ui.interact()
-  File "renpy/common/00action_control.rpy", line 131, in __call__
-    renpy.show_screen(self.screen, *self.args, **self.kwargs)
-Exception: Screen message_scree is not known.
-
+  File "game/script.rpy", line 31, in script
+    ai "Слухи разжигают любопытство в людях"
+Exception: Sayer 'ai' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00gamemenu.rpy", line 174, in script
-    $ ui.interact()
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\ast.py", line 823, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00gamemenu.rpy", line 174, in <module>
-    $ ui.interact()
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\display\core.py", line 2165, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\display\core.py", line 3201, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\display\layout.py", line 1202, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\display\transition.py", line 53, in event
-    return self.new_widget.event(ev, x, y, st) # E1101
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\display\layout.py", line 1202, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\display\layout.py", line 1202, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\display\screen.py", line 793, in event
-    rv = self.child.event(ev, x, y, st)
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\display\layout.py", line 1202, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\display\layout.py", line 1426, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\display\layout.py", line 288, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\display\layout.py", line 1202, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\display\layout.py", line 1426, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\display\layout.py", line 288, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\display\layout.py", line 288, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\display\behavior.py", line 1174, in event
-    return handle_click(self.clicked)
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\display\behavior.py", line 1095, in handle_click
-    rv = run(action)
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\display\behavior.py", line 395, in run
-    return action(*args, **kwargs)
-  File "renpy/common/00action_control.rpy", line 131, in __call__
-    renpy.show_screen(self.screen, *self.args, **self.kwargs)
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\display\screen.py", line 1322, in show_screen
-    raise Exception("Screen %s is not known.\n" % (name[0],))
-Exception: Screen message_scree is not known.
-
+  File "game/script.rpy", line 31, in script
+    ai "Слухи разжигают любопытство в людях"
+  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\ast.py", line 2557, in execute
+    Say.execute(self)
+  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\ast.py", line 575, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\ast.py", line 464, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'ai' is not defined.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.1.24030407
-Seishinaku High School Mysteries 0.2_Inventory
-Wed May  1 00:21:39 2024
+Seishinaku High School Mysteries 0.3_Choices
+Thu May  2 00:50:39 2024
