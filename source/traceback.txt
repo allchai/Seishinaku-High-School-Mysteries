@@ -1,24 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 31, in script
-    ai "Слухи разжигают любопытство в людях"
-Exception: Sayer 'ai' is not defined.
+  File "game/script.rpy", line 302, in script
+    if not ItemChoice:
+  File "game/script.rpy", line 302, in <module>
+    if not ItemChoice:
+NameError: name 'ItemChoice' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 31, in script
-    ai "Слухи разжигают любопытство в людях"
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\ast.py", line 2557, in execute
-    Say.execute(self)
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\ast.py", line 575, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\ast.py", line 464, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'ai' is not defined.
+  File "game/script.rpy", line 302, in script
+    if not ItemChoice:
+  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\ast.py", line 1842, in execute
+    if renpy.python.py_eval(condition):
+  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 302, in <module>
+    if not ItemChoice:
+NameError: name 'ItemChoice' is not defined
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.1.24030407
 Seishinaku High School Mysteries 0.3_Choices
-Thu May  2 00:50:39 2024
+Thu May  2 09:45:20 2024

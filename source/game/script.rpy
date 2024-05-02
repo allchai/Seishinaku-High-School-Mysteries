@@ -57,6 +57,7 @@ label start:
             $ WasOnThirdFloor = True
         else:
             ai "Но мы всё осмотрели. Её там не было."
+            jump FirstFloorChoiceTwo
         kadum "Но перед тем, как мы пойдём..."
         if not WasOnFirstFloor:
             kadum "У нас есть около тридцати минут до полуночи."
@@ -79,6 +80,10 @@ label start:
         if not WasOnFirstFloor:
             "Вестибюль встретил нас оглушительной тишиной."
             kadum "Стоит заглянуть во все открытые двери."
+            $ WasOnFirstFloor = True
+        else:
+            jump FirstFloorChoiceTwo
+
         label FirstFloorChoice:
             menu:
                 "Зайти в спортзал":
@@ -145,17 +150,19 @@ label start:
                 "Пойти на второй этаж":
                     ai "Если подумать, она могла вернуться на второй этаж."
                     kadum "Проверить всё равно стоило."
-                    if not WasOnThirdFloor:
+                    if WasOnThirdFloor == False:
                         ai "Пора подняться на этаж выше."
                         jump ThirdFloor
-                    else:
+                    elif WasOnThirdFloor == True:
                         ai "Пора спуститься на этаж ниже."
                         if WasInGym and WasAtBuphet and WasAtExit and WasOnThirdFloor:
-                            pass
+                            jump HoruchiScene
+                        else:
+                            jump FirstFloor
                 "Пойти на третий этаж":
                     jump ThirdFloor
-                        
-    "Вдруг в конце первого этажа мы увидели знакомую фигуру."
+    label HoruchiScene:           
+        "Вдруг в конце первого этажа мы увидели знакомую фигуру."
     label ForFlashback:
         "Что-то про Хорючи, говорящего, что сука боится призраков"
         if Flashback:
@@ -163,18 +170,19 @@ label start:
     label FirstFloorChoiceThree:
         menu:
             "Пойти на второй этаж":
-                menu:
-                    "Думать о Кадуме":
-                        if not ThinkKadum:
-                            "Мог ли Кадум пригласить меня по той же причине, что и Ясука взяла с собой Хорючи?"
-                            "Страшно было бы ему ходить по ночной школе в одиночку?"
-                            $ ThinkKadum = True
-                            jump FirstFloorChoiceThree        
-                        else:
-                            "Спрошу его потом, когда эта ночь закончится."
-                            jump FirstFloorChoiceThree
-                    "Зайти в класс":
-                        pass
+                label ThinkChoice:
+                    menu:
+                        "Думать о Кадуме":
+                            if not ThinkKadum:
+                                "Мог ли Кадум пригласить меня по той же причине, что и Ясука взяла с собой Хорючи?"
+                                "Страшно было бы ему ходить по ночной школе в одиночку?"
+                                $ ThinkKadum = True
+                                jump ThinkChoice       
+                            else:
+                                "Спрошу его потом, когда эта ночь закончится."
+                                jump ThinkChoice
+                        "Зайти в класс":
+                            jump GymScene
 
             "Думать о Ясуке":
                 if not ThinkYasuka:
@@ -187,22 +195,27 @@ label start:
                     "Несмотря на внешность, у этого парня доброе сердце."
                     "И, если это любовь, я надеюсь, что у них всё будет хорошо."
                     jump FirstFloorChoiceThree
-
-    "Собравшись с духом, я коснулась двери."
-    "Очень много текст!"
+    label GymScene:
+        "Собравшись с духом, я коснулась двери."
+        "Очень много текст!"
     kadum "Ах да, верно... Время проверить загадочную связку."
-    menu:
-        "Думать об Аруе":
-            if not ThinkAruya:
-                "Держись, Аруя. Хоть ты и, вроде, плохой человек... но без страха первая бросилась на того монстра."
-                "Это случилось из-за нашего бездействия. Мы должны быть признательны тебе за храбрость. Спасибо."
-                $ ThinkAruya = True
-            else:
-                "Лишиться кисти – это... ужасно. Надеюсь, у Аруи найдутся силы, чтобы пережить потерю."                        
-        "Пойти в вестибюль":
-            pass
-    kadum "Сейчас проверим..."
-    "Много текст!"
+    label HollChoice:
+        menu:
+            "Думать об Аруе":
+                if not ThinkAruya:
+                    "Держись, Аруя. Хоть ты и, вроде, плохой человек... но без страха первая бросилась на того монстра."
+                    "Это случилось из-за нашего бездействия. Мы должны быть признательны тебе за храбрость. Спасибо."
+                    $ ThinkAruya = True
+                    jump HollChoice
+                else:
+                    "Лишиться кисти – это... ужасно. Надеюсь, у Аруи найдутся силы, чтобы пережить потерю."  
+                    jump HollChoice                      
+            "Пойти в вестибюль":
+                jump SceneInFAS
+            
+    label SceneInFAS: # FAS - First Aid Station - Медпункт
+        kadum "Сейчас проверим..."
+        "Много текст!"
     label ThirdFlashback:
         "Что-то про Хорючи, у которого трясутся ноги"
         if Flashback:
@@ -286,7 +299,7 @@ label start:
                     ai "Но... но... эх"  
                     jump ClassChoice           
             "Осмотреть второй этаж":
-                if not ItemChoice:
+                if not MirrorChoice:
                     pass
                 else:
                     ai "Осталось одно место, куда мы ещё не заходили."
