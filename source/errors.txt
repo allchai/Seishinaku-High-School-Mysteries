@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/options.rpy", line 33: is not terminated with a newline. (Check strings and parenthesis.)
-(Perhaps you left out a " at the end of the first line.)
-    """)
+File "game/screens.rpy", line 138: style property xma is not known.
+    xma
+       ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Thu May  2 00:40:02 2024
+Thu May  2 21:34:11 2024

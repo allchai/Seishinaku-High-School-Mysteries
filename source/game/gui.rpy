@@ -59,16 +59,16 @@ define gui.interface_text_color = '#ffffff'
 ## Шрифты и их размеры #########################################################
 
 ## Шрифт, используемый внутриигровым текстом.
-define gui.text_font = "font/undertale_battle_font.ttf"
+define gui.text_font = "font/Fixedsys.ttf"
 
 ## Шрифт, используемый именами персонажей.
-define gui.name_text_font = "font/undertale_battle_font.ttf"
+define gui.name_text_font = "font/Fixedsys.ttf"
 
 ## Шрифт, используемый текстом вне игры.
-define gui.interface_text_font = "font/undertale_battle_font.ttf"
+define gui.interface_text_font = "font/Fixedsys.ttf"
 
 ## Размер нормального текста диалога.
-define gui.text_size = 22
+define gui.text_size = 28
 
 ## Размер имён персонажей.
 define gui.name_text_size = 22
@@ -137,7 +137,8 @@ define gui.dialogue_xpos = 201
 define gui.dialogue_ypos = 38
 
 ## Максимальная ширина текста диалога в пикселях.
-define gui.dialogue_width = 558
+#define gui.dialogue_width = 558
+define gui.dialogue_width = 640
 
 ## Горизонтальное выравнивание текста диалога. Это может быть 0.0 для
 ## левоориентированного, 0.5 для центрированного и 1.0 для правоориентированного
@@ -262,7 +263,7 @@ define gui.skip_ypos = 8
 define gui.notify_ypos = 34
 
 ## Интервал между выборами в меню.
-define gui.choice_spacing = 17
+define gui.choice_spacing = 5
 
 ## Кнопки в секции навигации главного и игрового меню.
 define gui.navigation_spacing = 3
@@ -449,7 +450,7 @@ init python:
         gui.textbox_height = 180
         gui.name_xpos = 60
         gui.dialogue_xpos = 68
-        gui.dialogue_width = 825
+        gui.dialogue_width = 1210
 
         ## Изменяет размеры и интервалы различных объектов.
         gui.slider_size = 27

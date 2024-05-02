@@ -517,6 +517,7 @@ style game_menu_content_frame:
     #left_margin 20
     right_margin 15
     top_margin 8
+    ysize 400
 
 style game_menu_viewport:
     xsize 720

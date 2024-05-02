@@ -1,28 +1,40 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 302, in script
-    if not ItemChoice:
-  File "game/script.rpy", line 302, in <module>
-    if not ItemChoice:
-NameError: name 'ItemChoice' is not defined
+After initialization, but before game start.
+  File "renpy/common/00start.rpy", line 83, in _init_language
+    renpy.change_language(language)
+  File "game/screens.rpy", line 160, in <module>
+    xsize gui.dialogue_width
+AttributeError: 'StoreModule' object has no attribute 'dialogue_width'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 302, in script
-    if not ItemChoice:
-  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\ast.py", line 1842, in execute
-    if renpy.python.py_eval(condition):
+  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\main.py", line 635, in main
+    run(restart)
+  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\main.py", line 75, in run
+    renpy.translation.init_translation()
+  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\translation\__init__.py", line 664, in init_translation
+    renpy.store._init_language() # type: ignore
+  File "renpy/common/00start.rpy", line 83, in _init_language
+    renpy.change_language(language)
+  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\translation\__init__.py", line 758, in change_language
+    new_change_language(tl, language)
+  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\translation\__init__.py", line 710, in new_change_language
+    i.apply()
+  File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\ast.py", line 2784, in apply
+    value = renpy.python.py_eval(expr)
   File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\python.py", line 1209, in py_eval
     return py_eval_bytecode(code, globals, locals)
   File "D:\all\all_packs\Portable приложения\renpy-8.2.1-sdk\renpy\python.py", line 1202, in py_eval_bytecode
     return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 302, in <module>
-    if not ItemChoice:
-NameError: name 'ItemChoice' is not defined
+  File "game/screens.rpy", line 160, in <module>
+    xsize gui.dialogue_width
+AttributeError: 'StoreModule' object has no attribute 'dialogue_width'
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.1.24030407
 Seishinaku High School Mysteries 0.3_Choices
-Thu May  2 09:45:20 2024
+Thu May  2 22:00:02 2024
