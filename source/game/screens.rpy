@@ -516,7 +516,7 @@ style game_menu_navigation_frame:
 style game_menu_content_frame:
     #left_margin 20
     right_margin 15
-    top_margin 8
+    top_margin 0
     ysize 400
 
 style game_menu_viewport:

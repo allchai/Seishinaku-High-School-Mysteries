@@ -23,7 +23,7 @@ define gui.show_name = False
 
 ## Версия игры.
 
-define config.version = "0.4_Scelet"
+define config.version = "0.5_Sprites"
 
 
 ## Текст, помещённый в экран "Об игре". Поместите текст между тройными скобками.

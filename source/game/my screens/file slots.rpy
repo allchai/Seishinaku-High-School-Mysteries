@@ -17,6 +17,7 @@ screen file_slots(title, back_button=True):
 
                 key_events True
                 xalign 0.4
+                yalign 0.0
                 action page_name_value.Toggle()
 
                 input:
@@ -28,7 +29,7 @@ screen file_slots(title, back_button=True):
                 style_prefix "slot"
 
                 xalign 0.0
-                yalign 0.13
+                yalign 0.3
 
                 spacing gui.slot_spacing
 
@@ -56,7 +57,7 @@ screen file_slots(title, back_button=True):
                 style_prefix "page"
 
                 xalign 0.3
-                yalign 0.63
+                yalign 0.95
 
                 hbox:
                     xalign 0.3
